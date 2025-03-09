@@ -1,0 +1,294 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Background for the site */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff; /* Navbar background color */
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ff5722; /* Orange logo color */
+}
+
+.market-summary {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.market-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.market-item .index-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.market-item .index-value {
+    font-weight: bold;
+    color: #333;
+}
+
+.market-item .index-change {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.market-item .index-change.negative {
+    color: #ff0000; /* Red for negative changes */
+}
+
+.market-item .index-change.positive {
+    color: #00c853; /* Green for positive changes */
+}
+
+.navbar .menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .menu a {
+    margin-right: 15px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.navbar .menu a:hover {
+    color: #ff5722; /* Highlight color on hover */
+}
+
+.navbar .menu .profile {
+    font-weight: bold;
+    color: #ff5722; /* Orange for profile */
+}
+
+.navbar .menu .alarm-button {
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff5722;
+    margin-right: 15px;
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+.navbar .menu .alarm-button:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+}
+
+/* Container and Sidebar */
+.container {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 50px); /* Adjust height to fit viewport */
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #ffffff; /* Sidebar background */
+    border-right: 1px solid #e5e5e5;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Search Bar */
+.search-bar {
+    margin-bottom: 15px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Updated for better look */
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.search-bar input::placeholder {
+    color: #888; /* Subtle grey placeholder */
+}
+
+/* Stock List */
+.stock-list .stock-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 14px;
+}
+
+.stock-item .stock-name {
+    font-weight: bold;
+    color: #333;
+    flex: 1;
+}
+
+.stock-item .stock-change {
+    flex: 1;
+    text-align: right;
+}
+
+.stock-item .stock-price {
+    font-weight: bold;
+    text-align: right;
+    flex: 1;
+}
+
+.stock-item .stock-change small {
+    font-size: 12px;
+    color: #aaa; /* Light grey for smaller numbers in parentheses */
+}
+
+.stock-item.positive .stock-change {
+    color: #00c853; /* Green for positive changes */
+}
+
+.stock-item.negative .stock-change {
+    color: #ff0000; /* Red for negative changes */
+}
+
+/* Chart Section */
+.chart-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.symbol-input {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    width: 30%;
+    transition: border-color 0.2s ease;
+}
+
+.symbol-input::placeholder {
+    color: #888; /* Subtle placeholder color */
+}
+
+.symbol-input:focus {
+    border-color: #ff5722; /* Orange highlight on focus */
+}
+
+.chart-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.chart-controls {
+    display: flex;
+    gap: 10px;
+}
+
+/* Dropdown Styles for Graphs and Time Intervals */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.dropdown-button:hover {
+    background-color: #ff5722;
+    color: #fff;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    margin-top: 5px;
+    z-index: 100;
+    border-radius: 8px;
+    width: 150px;
+}
+
+.dropdown-menu button {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    background: none;
+    text-align: left;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.dropdown-menu button:hover {
+    background-color: #ff5722;
+    color: #fff;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Chart Placeholder */
+.chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    border: 1px solid #e5e5e5;
+}
+
+.chart img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Candlestick Chart */
+canvas#candlestickChart {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}

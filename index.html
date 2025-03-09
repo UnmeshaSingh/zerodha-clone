@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <title>Zerodha Clone</title>
+
+  <!-- Chart.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Chart.js Financial Plugin for Candlestick Charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial@3.0.0/dist/chartjs-chart-financial.min.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">ZERODHA</div>
+    <div class="market-summary">
+      <div class="market-item">
+        <span class="index-name">NIFTY 50</span>
+        <span class="index-value">23727.65</span>
+        <span class="index-change negative">
+          -25.80 <span class="small-change">(-0.11%)</span>
+        </span>
+      </div>
+      <div class="market-item">
+        <span class="index-name">SENSEX</span>
+        <span class="index-value">78472.87</span>
+        <span class="index-change negative">
+          -67.30 <span class="small-change">(-0.09%)</span>
+        </span>
+      </div>
+    </div>
+    <div class="menu">
+      <a href="#">Dashboard</a>
+      <a href="#">Orders</a>
+      <a href="#">Holdings</a>
+      <a href="#">Positions</a>
+      <a href="#">Bids</a>
+      <a href="#">Funds</a>
+      <button class="alarm-button">🔔</button>
+      <a href="#" class="profile">KIG242</a>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="search-bar">
+        <input type="text" placeholder="Search eg: infy bse, nifty fut, index fund, etc">
+      </div>
+      <div class="stock-list">
+        <div class="stock-item negative">
+          <span class="stock-name">GOLDBEES</span>
+          <span class="stock-change">
+            -0.29 <span class="small-change">(-0.45%)</span>
+          </span>
+          <span class="stock-price">63.68</span>
+        </div>
+        <div class="stock-item negative">
+          <span class="stock-name">HDFCBANK</span>
+          <span class="stock-change">
+            -2.90 <span class="small-change">(-0.16%)</span>
+          </span>
+          <span class="stock-price">1798.10</span>
+        </div>
+        <div class="stock-item negative">
+          <span class="stock-name">HINDUNILVR</span>
+          <span class="stock-change">
+            -3.35 <span class="small-change">(-0.14%)</span>
+          </span>
+          <span class="stock-price">2335.55</span>
+        </div>
+        <div class="stock-item negative">
+          <span class="stock-name">INFY</span>
+          <span class="stock-change">
+            -15.25 <span class="small-change">(-0.79%)</span>
+          </span>
+          <span class="stock-price">1909.05</span>
+        </div>
+        <div class="stock-item negative">
+          <span class="stock-name">ONGC</span>
+          <span class="stock-change">
+            -1.90 <span class="small-change">(-0.79%)</span>
+          </span>
+          <span class="stock-price">238.95</span>
+        </div>
+        <div class="stock-item positive">
+          <span class="stock-name">TCS</span>
+          <span class="stock-change">
+            +21.20 <span class="small-change">(+0.51%)</span>
+          </span>
+          <span class="stock-price">4179.50</span>
+        </div>
+        <div class="stock-item negative">
+          <span class="stock-name">NIFTY 50 INDEX</span>
+          <span class="stock-change">
+            -25.80 <span class="small-change">(-0.11%)</span>
+          </span>
+          <span class="stock-price">23727.65</span>
+        </div>
+        <div class="stock-item negative">
+          <span class="stock-name">NIFTYETF</span>
+          <span class="stock-change">
+            -0.38 <span class="small-change">(-0.15%)</span>
+          </span>
+          <span class="stock-price">253.31</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chart Section -->
+    <div class="chart-section">
+      <div class="chart-header">
+        <input type="text" class="symbol-input" placeholder="Enter stock symbol (e.g., AAPL)">
+        <div class="chart-controls">
+          <div class="dropdown">
+            <button class="dropdown-button">Graphs ▼</button>
+            <div class="dropdown-menu">
+              <button>Bar</button>
+              <button>Coloured Bar</button>
+              <button>Line</button>
+              <button>Vertex Line</button>
+              <button>Step</button>
+              <button>Mountain</button>
+              <button>Base Line</button>
+              <button>Hollow Candle</button>
+              <button>Volume Candle</button>
+              <button>Coloured HLC Bar</button>
+              <button>Scatter Point</button>
+              <button>Histogram</button>
+              <button>Heikin Ashi</button>
+              <button>Kagi</button>
+              <button>Line Break</button>
+              <button>Renko</button>
+            </div>
+          </div>
+
+          <!-- Dropdown for time intervals -->
+          <div class="dropdown">
+            <button class="dropdown-button">30m ▼</button>
+            <div class="dropdown-menu">
+              <button>1 Min</button>
+              <button>2 Min</button>
+              <button>3 Min</button>
+              <button>4 Min</button>
+              <button>5 Min</button>
+              <button>10 Min</button>
+              <button>15 Min</button>
+              <button>30 Min</button>
+              <button>1 Hour</button>
+              <button>2 Hour</button>
+              <button>3 Hours</button>
+              <button>4 Hours</button>
+              <button>1 D</button>
+              <button>1 W</button>
+              <button>1 Month</button>
+              <button>6 Months</button>
+              <button>1 Y</button>
+              <button>5 Y</button>
+            </div>
+          </div>
+
+          <button>Views</button>
+          <button>Studies</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Your Custom Script -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
